@@ -1,3 +1,3 @@
 # softoware
-only just my subject at school
-MINAIDE
+Just a place for students to share code.
+IGNORE
