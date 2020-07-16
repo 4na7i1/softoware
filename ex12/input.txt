@@ -1,10 +1,10 @@
 4.3 59 yamada
 4.6 30 itou
-5.1 21 tanaka
 2.3 45 utida
 5.0 49 nakamura
 4.4 69 kimura
 3.2 69 yosida
 1.4 7  takei
 3.5 55 gotou
-4,2 42 yamazaki
+4.5 67 yamazaki
+2.1 55 takeda

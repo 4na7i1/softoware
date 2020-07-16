@@ -117,8 +117,9 @@ SRec *listsort(SRec *head,int (*compare)(const void*,const void*)){
 	SRec **p,**max,*tmp;
 	SRec *new_head=NULL;
 
-	p=&head;
-	while(1){
+
+	while(head!=NULL){
+		p=&head;
 		max=&head;
 		while(*p!=NULL){
 			if((*compare)(*max,*p)<=0){
