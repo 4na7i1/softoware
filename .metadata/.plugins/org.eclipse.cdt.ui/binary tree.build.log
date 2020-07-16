@@ -1,0 +1,9 @@
+22:19:55 **** Incremental Build of configuration Debug for project binary tree ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files/Java/jdk-13.0.2/bin/server;C:/Program Files/Java/jdk-13.0.2/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\OpenFaceSwap;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\CMake\bin;C:\dev\opencv-3.1.0\build\x64\vc12\bin;C:\wget\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\MinGW\bin;C:\Program Files\PuTTY\;C:\Users\hayato\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\hayato\AppData\Local\Programs\Python\Python37-32\;C:\Users\hayato\AppData\Local\Microsoft\WindowsApps;C:\Users\hayato\AppData\Local\atom\bin;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;;C:\Users\hayato\eclipse\cpp-2019-12\eclipse]
+
+22:19:55 Build Failed. 1 errors, 0 warnings. (took 82ms)
+
