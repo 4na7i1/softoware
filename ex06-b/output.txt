@@ -1,0 +1,8 @@
+4.000000 30 itou
+4.000000 69 kimura
+5.000000 49 nakamura
+1.000000 7 takei
+5.000000 21 tanaka
+2.000000 45 utida
+4.000000 59 yamada
+3.000000 69 yosida

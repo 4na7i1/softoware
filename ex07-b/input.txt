@@ -1,0 +1,11 @@
+8
+4 59 yamada
+4 30 itou
+5 21 tanaka
+2 45 utida
+5 49 nakamura
+4 69 kimura
+3 69 yosida
+1 7  takei
+
+
