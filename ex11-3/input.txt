@@ -1,0 +1,5 @@
+4.1 10 mizu
+3.2 5  aqua
+4.0 11 piyo
+2.4 20 hoge
+1.1 44 huga

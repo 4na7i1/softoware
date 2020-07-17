@@ -29,24 +29,8 @@ int comp_name(const void *,const void *);
 SRec *listsort(SRec *head,int (*compare)(const void*,const void*));
 void dump_list(SRec *list);
 void free_list(SRec *list);
+SRec *comp_judgement(char *judge_comp,SRec *list);
 
-SRec *comp_handan(char argv[1],SRec *list){
-	SRec *head=NULL;
-	if(strcmp(argv[1],"gpa")==0){
-		head=listsort(head,comp_gpa);
-	}
-	else if(strcmp(argv[1],"credit")==0){
-		head=listsort(head,comp_credit);
-	}
-	else if(strcmp(argv[1],"name")==0){
-		head=listsort(head,comp_name);
-	}
-	else{
-		printf("The first argument of the command argument must be one of gpa, credit or name\n");
-		return 1;
-	}
-	return head;
-}
 
 int main(int argc,char *argv[]) {
 	SRec *head;
@@ -57,9 +41,10 @@ int main(int argc,char *argv[]) {
 		}
 	head=input(argv[2]);
 
-	head=comp_handan(argv[1],head);
+	head=comp_judgement(argv[1],head);
 
 	printf("\nSorted by %s\n",argv[1]);
+	dump_list(head);
 	output(argv[3],head);
 
 
@@ -123,25 +108,46 @@ void output(char *outputfile,SRec *p){
 }
 
 SRec *listsort(SRec *head,int (*compare)(const void*,const void*)){
-	SRec **p,**max,*tmp;
-	SRec *new_head=NULL;
+    SRec *tree;
+    SRec **p; //二分木用
+    SRec **q; //連結リスト用
 
+    tree = head;
+    q = &(head->next);
+    while(*q != NULL){
+        p = &tree;
+        while(*p != NULL){
+            if(compare(*p, *q) > 0){
+                p = &((*p)->left);
+            }
+            else{
+                p = &((*p)->right);
+            }
+        }
+        *p = *q;
+        q = &((*q)->next);
 
-	while(head!=NULL){
-		p=&head;
-		max=&head;
-		while(*p!=NULL){
-			if((*compare)(*max,*p)<=0){
-				max=p;
-			}
-			p=&((*p)->next);
-		}
-		tmp=(*max)->next;
-		(*max)->next=new_head;
-		new_head=*max;
-		*max=tmp;
+    }
+
+    return head;
+}
+
+SRec *comp_judgement(char *judge_comp,SRec *list){
+	SRec *head=NULL;
+	if(strcmp(judge_comp,"gpa")==0){
+		head=listsort(list,comp_gpa);
 	}
-	return new_head;
+	else if(strcmp(judge_comp,"credit")==0){
+		head=listsort(list,comp_credit);
+	}
+	else if(strcmp(judge_comp,"name")==0){
+		head=listsort(list,comp_name);
+	}
+	else{
+		printf("The first argument of the command argument must be one of gpa, credit or name\n");
+		exit(1);
+	}
+	return head;
 }
 
 int comp_gpa(const void *n1,const void *n2){
@@ -172,17 +178,18 @@ int comp_name(const void *n1,const void *n2){
 	return strcmp(((SRec*)n1)->name,((SRec*)n2)->name);
 }
 
-void dump_list(Srec *list){
-	if(list==NULL){
-		return;
-	}
-	else{
-		printf("(5.3f %3d %10s) n:%p l:%p r:%p \n",list->gpa,list->credit,list->name,list,list->left,list->right);
-		dump_list(list->next);
-	}
+void dump_list(SRec *list)
+{
+    if(list == NULL){
+        return;
+    }
+    else{
+        printf("(%5.3f %3d %10s) n:%p l:%p r:%p \n", list->gpa, list->credit, list->name, list, list->left, list->right);
+        dump_list(list->next);
+    }
 }
 
-void free_list(Srec *list){
+void free_list(SRec *list){
 	if(list==NULL){
 		return;
 	}
